@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website </title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/32cd9c5be6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="sm_5b247f668093c-removebg-preview.png" class="logo">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li> 
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <p> Website Developer</p>
+                    <hi>Hi, I'm <span>Burhan Riyaz</span><br> From Jammu and Kashmir</hi>
+                </div>
+            </div>
+        </div>
+        <!--------about--------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                <div class="about-col-1">
+                    <img src="about image.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title>">About Me</h1>
+                    <P>Hello everyone, My Name is Burhan Riyaz and i am persueing my BCA from Rayat Bahra University,Sunstone Kharar and I am very fond of coding and learning</P>
+                <div class="tab-titles">
+                    <p class="tab-titles active-link">EDUCATION</p>        
+                </div>
+                <div class="tab-contents">
+                    <ul>
+                        <li><span>One year Diploma</span><br>From Bright Horizan Institute, Humhama, Srinagar </li>
+                        <li><span>Class12th</span><br>From Govt. Higher Secondary School Budgam, Budgam </li>
+                        <li><span>BCA</span><br>From Rayat Bahra University Sunstone</li>
+                    </ul>
+                </div>
+            </div>
+            <!-------------Skills------------->
+   <div id="skills">
+    <div class="container">
+        <h1 class="sub-title">My Skills</h1>
+        <div class="skills-list">
+            <div>
+                <i class="fa-brands fa-github fa-beat-fade"></i>
+                <h2>Github</h2>
+                <p>It's an platform which allows you to   host your code . In Github there are many commands like git init, git commit and git status , git branch.</p>
+                </div>
+                <div>
+                <i class="fa-solid fa-crop fa-beat-fade"></i>
+                <h2>MongoDb</h2>
+                <p>MongoDb  is a document database and there are some commands of Mongo like show dbs, use DATABASE_NAME, db.dropDatabase(),show collections.</p>
+                </div>
+                <div>
+                <i class="fa-brands fa-uncharted fa-beat-fade"></i>
+                <h2>Web Development</h2>
+                <p>The tasks associated with creating, building , and maintaining websites and web applications that run online on a browser using languages like HTML , CSS , Javascript.</p>
+            </div>
+        </div>
+    </div>
+   </div>
+
+        <!----------contact--------->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>EMAIL:-     sofiburhan0902@gmail.com</p>
+                        <p><i class="fa-solid fa-paper-plane"></i>MOBILE NO:-   +91 6006570733 </p>
+                        <div class="social-icons">
+                            
+                            <a href="https://instagram.com/heyy.burhan?igshid=YmMyMTA2M2Y="><i class="fa-brands fa-instagram"></i></i></a>
+                            <a href="https://www.linkedin.com/in/burhan-riyaz-190939251"><i class="fa-brands fa-linkedin-in"></i></a>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-right"></div>
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn">Submit</button>
+                </form>
+                <span id="msg"></span>     
+        </div>
+        </div>
+    </div>
+ </div>
+</div>
+</div>
+<!-- home section -->
+<section class="home" id="home">
+    <div class="max-width"></div>
+</section>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby7PfiGFLMG6ePpA650-Zbjej_CARlbfRT0CJqKYH9r9N3O1eOEydejzxppwFWqXdm2ig/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>{
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+               msg.innerHTML=""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+  <footer>
+    <p>&copy; 2023 Burhan. All rights reserved.</p>
+  </footer> 
+</body>
+</html>
